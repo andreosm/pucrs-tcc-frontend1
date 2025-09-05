@@ -37,7 +37,7 @@ jobs:
     - name: Build, tag, and push docker image to Amazon ECR
       env:
         REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        REPOSITORY: 337909759004.dkr.ecr.us-east-2.amazonaws.com/andreosm/pucrs-tcc-api
+        REPOSITORY: https://github.com/andreosm/pucrs-tcc-frontend1.git
         IMAGE_TAG: ${{ github.sha }}
       run: |
         docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
